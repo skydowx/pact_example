@@ -1,0 +1,114 @@
+{
+  "consumer": {
+    "name": "pactflow-example-consumer-js-kafka"
+  },
+  "provider": {
+    "name": "pactflow-example-provider-js-kafka"
+  },
+  "messages": [
+    {
+      "description": "a user created event",
+      "providerStates": [
+
+      ],
+      "contents": {
+        "user_id": 504146,
+        "first_name": "John",
+        "last_name": "Doe",
+        "department": "Artificial Intelligence",
+        "designation": "ML Lead",
+        "tenant_id": 123456,
+        "image_url": "http://placeimg.com/640/480/fashion",
+        "city": "Zoeville",
+        "country": "Brazil",
+        "bio": "Debitis assumenda aut aut et.",
+        "social_links": {
+          "facebook": "https://facebook.com/"
+        },
+        "employee_id": 2175
+      },
+      "matchingRules": {
+        "body": {
+          "$.first_name": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.last_name": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.department": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.designation": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.image_url": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.city": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.country": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.bio": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.social_links": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.employee_id": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          }
+        }
+      },
+      "metaData": {
+        "kafka_topic": "event_stream"
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  }
+}

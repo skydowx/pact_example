@@ -5,11 +5,14 @@
 	"main": "app.js",
 	"scripts": {
 		"start": "node app.js",
-		"migrate": "knex migrate:latest",
+		"migrate": "knex --knexfile=./database/knexfile.js migrate:latest",
 		"makemigrate": "knex --knexfile=./database/knexfile.js migrate:make",
 		"makeseed": "knex --knexfile=./database/knexfile.js seed:make",
-		"seed": "knex seed:run",
-		"lint": "eslint '**/*.js'"
+		"seed": "knex --knexfile=./database/knexfile.js seed:run",
+		"lint": "eslint '**/*.js'",
+		"test": "npx jest --testTimeout 30000",
+		"test:pact": "npx jest --testTimeout 30000 --testMatch \"**/*.pact.test.js\"",
+		"publish:pact": "node publish_pacts.js"
 	},
 	"author": "",
 	"license": "ISC",
@@ -25,7 +28,9 @@
 	},
 	"devDependencies": {
 		"eslint": "^7.18.0",
-		"husky": "^4.3.8"
+		"husky": "^4.3.8",
+		"@pact-foundation/pact": "^9.9.12",
+		"jest": "^25.4.0"
 	},
 	"husky": {
 		"hooks": {

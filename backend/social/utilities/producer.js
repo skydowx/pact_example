@@ -47,7 +47,7 @@ const initProducer = async () => {
 						value: JSON.stringify({
 							event_name: 'tenant_created',
 							properties: {
-								id: id,
+								tenant_id: id,
 								name: faker.company.companyName(),
 								address: faker.address.streetAddress(),
 								city: faker.address.city(),
@@ -76,7 +76,7 @@ const initProducer = async () => {
 						value: JSON.stringify({
 							event_name: 'user_created',
 							properties: {
-								id: faker.datatype.number({ min: 100000, max: 999999 }),
+								user_id: faker.datatype.number({ min: 100000, max: 999999 }),
 								first_name: faker.name.firstName(),
 								last_name: faker.name.lastName(),
 								department: faker.lorem.word(),

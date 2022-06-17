@@ -36,11 +36,15 @@ services:
       - kafka
     volumes:
       - ./backend/devkeys:/tmp/secrets
+      - ./backend/social/database/migrations:/usr/app/database/migrations
+      - ./backend/social/pacts:/usr/app/pacts
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
       POSTGRES_HOST: postgres
       POSTGRES_DATABASE: $SOCIAL_DB
+      PACT_BROKER_TOKEN: $PACT_BROKER_TOKEN
+      PACT_BROKER_BASE_URL: $PACT_BROKER_BASE_URL
   
   # adding kafka 
   zookeeper:
