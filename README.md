@@ -1,1 +1,1 @@
-# Pact Example
+# Pact Contract Testing Example
